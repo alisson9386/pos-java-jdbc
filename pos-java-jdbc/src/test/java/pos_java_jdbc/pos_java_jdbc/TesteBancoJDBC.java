@@ -14,9 +14,8 @@ public class TesteBancoJDBC {
 		UserPosDAO userPosDAO = new UserPosDAO();
 		UserPosJava userPosJava = new UserPosJava();
 
-		userPosJava.setId(5L);
-		userPosJava.setNome("Gabriel");
-		userPosJava.setEmail("gabriel@gmail.com");
+		userPosJava.setNome("Lucas");
+		userPosJava.setEmail("lucas@gmail.com");
 
 		userPosDAO.salvar(userPosJava);
 	}
@@ -64,6 +63,18 @@ public class TesteBancoJDBC {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void initDeletar() {
+		
+		try {
+			UserPosDAO dao = new UserPosDAO();
+			dao.deletar(7L);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 
