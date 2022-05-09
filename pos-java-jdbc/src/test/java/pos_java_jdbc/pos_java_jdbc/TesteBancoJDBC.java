@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.Test;
 
 import DAO.UserPosDAO;
+import model.TelefoneUser;
 import model.UserPosJava;
 
 public class TesteBancoJDBC {
@@ -14,8 +15,8 @@ public class TesteBancoJDBC {
 		UserPosDAO userPosDAO = new UserPosDAO();
 		UserPosJava userPosJava = new UserPosJava();
 
-		userPosJava.setNome("Lucas");
-		userPosJava.setEmail("lucas@gmail.com");
+		userPosJava.setNome("Rafaela Restier");
+		userPosJava.setEmail("fafa.restier@gmail.com");
 
 		userPosDAO.salvar(userPosJava);
 	}
@@ -72,6 +73,22 @@ public class TesteBancoJDBC {
 		try {
 			UserPosDAO dao = new UserPosDAO();
 			dao.deletar(7L);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	@Test
+	public void initSalvarTelefone() {
+		try {
+			TelefoneUser telefoneUser = new TelefoneUser();
+			telefoneUser.setNumero("(31)975427379");
+			telefoneUser.setTipo("Celular");
+			telefoneUser.setUsuario(11L);
+			
+			UserPosDAO dao = new UserPosDAO();
+			dao.salvarTelefone(telefoneUser);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
